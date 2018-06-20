@@ -50,14 +50,30 @@ func testLoop3(_ a: inout [Int], _ tot: Int) -> Int {
     return a[tot/2]
 }
 
-let tot = 1000
+var tot = 1000
+if !CommandLine.arguments.isEmpty, let arg = Int(CommandLine.arguments[1]) {
+    tot = arg
+}
+
+print(tot)
+
 var a = [Int](repeating: 0, count: tot)
+var n = 0
+var startTime = 0.0
+var timeElapsed = 0.0
 
-let m = testLoop1(&a, tot)
-print(m)
+startTime = CFAbsoluteTimeGetCurrent()
+n = testLoop1(&a, tot)
+timeElapsed = CFAbsoluteTimeGetCurrent() - startTime
+print("Time elapsed for loop\(n): \(String(format: "%f", timeElapsed)) s.")
 
-let n = testLoop2(&a, tot)
-print(n)
+startTime = CFAbsoluteTimeGetCurrent()
+n = testLoop2(&a, tot)
+timeElapsed = CFAbsoluteTimeGetCurrent() - startTime
+print("Time elapsed for loop\(n): \(String(format: "%f", timeElapsed)) s.")
 
-let o = testLoop3(&a, tot)
-print(o)
+startTime = CFAbsoluteTimeGetCurrent()
+n = testLoop3(&a, tot)
+timeElapsed = CFAbsoluteTimeGetCurrent() - startTime
+print("Time elapsed for loop\(n): \(String(format: "%f", timeElapsed)) s.")
+
