@@ -50,6 +50,23 @@ func testLoop3(_ a: inout [Int], _ tot: Int) -> Int {
     return a[tot/2]
 }
 
+func testLoop4(_ a: inout [Int], _ tot: Int) -> Int {
+    let size = MemoryLayout<Int>.size
+
+    if var p:UnsafeMutableRawPointer = UnsafeMutableRawPointer(mutating: a) {
+        //let data = Data(bytes: p, count: tot * size)
+        for _ in 0..<tot {
+            p.storeBytes(of: 4, as: Int.self)
+            p += size
+        }
+    }
+
+    return a[tot/2]
+}
+
+
+
+
 var tot = 1000
 if !CommandLine.arguments.isEmpty, let arg = Int(CommandLine.arguments[1]) {
     tot = arg
@@ -74,6 +91,11 @@ print("Time elapsed for loop\(n): \(String(format: "%f", timeElapsed)) s.")
 
 startTime = CFAbsoluteTimeGetCurrent()
 n = testLoop3(&a, tot)
+timeElapsed = CFAbsoluteTimeGetCurrent() - startTime
+print("Time elapsed for loop\(n): \(String(format: "%f", timeElapsed)) s.")
+
+startTime = CFAbsoluteTimeGetCurrent()
+n = testLoop4(&a, tot)
 timeElapsed = CFAbsoluteTimeGetCurrent() - startTime
 print("Time elapsed for loop\(n): \(String(format: "%f", timeElapsed)) s.")
 
