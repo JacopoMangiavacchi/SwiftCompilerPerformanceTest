@@ -19,7 +19,7 @@ A super simple FOR loop implemented in three different ways in order to force an
     xcrun swiftc -Ounchecked main.swift -o mainUnckecked
 
 
-# Test Results for 100.000.000 interactions
+# XCode Build Test Results for 100.000.000 interactions
 
 ## ./mainNone 100000000
     Time elapsed for loop1: 4.159429 s.
