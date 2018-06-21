@@ -106,6 +106,14 @@ func testLoop6(_ a: inout [Int64], _ tot: Int) -> Int64 {
     return a[tot/2]
 }
 
+func testLoop7(_ a: inout [Int64], _ tot: Int) -> Int64 {
+    a.withUnsafeMutableBufferPointer { (cArray: inout UnsafeMutableBufferPointer<Int64>) -> () in
+        test7(cArray.baseAddress, Int64(tot))
+    }
+
+    return a[tot/2]
+}
+
 
 var tot = 1000
 if !CommandLine.arguments.isEmpty, let arg = Int(CommandLine.arguments[1]) {
@@ -146,5 +154,10 @@ print("Time elapsed for loop\(n): \(String(format: "%f", timeElapsed)) s.")
 
 startTime = CFAbsoluteTimeGetCurrent()
 n = testLoop6(&a, tot)
+timeElapsed = CFAbsoluteTimeGetCurrent() - startTime
+print("Time elapsed for loop\(n): \(String(format: "%f", timeElapsed)) s.")
+
+startTime = CFAbsoluteTimeGetCurrent()
+n = testLoop7(&a, tot)
 timeElapsed = CFAbsoluteTimeGetCurrent() - startTime
 print("Time elapsed for loop\(n): \(String(format: "%f", timeElapsed)) s.")
