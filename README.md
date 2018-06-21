@@ -4,7 +4,7 @@ Some test on Swift/LLVM compiler code optimization
 A super simple FOR loop implemented in three different ways in order to force and see how different swift/llvm compiler optimization generate intermediate AST/IL and final IR and assembly code.
 
 
-# Compile options
+# XCode Build Compile options
 
 ## Flags:
     [NO -Oxxx] ?
@@ -12,7 +12,7 @@ A super simple FOR loop implemented in three different ways in order to force an
     -Osize                  Compile with optimizations and target small code size
     -Ounchecked             Compile with optimizations and remove runtime safety checks
 
-## Build commands:
+## XCode Build commands with xcrun:
     xcrun swiftc main.swift -o mainNoO
     xcrun swiftc -Onone main.swift -o mainNone
     xcrun swiftc -Osize main.swift -o mainSize
@@ -48,6 +48,29 @@ A super simple FOR loop implemented in three different ways in order to force an
     Time elapsed for loop3: 0.094197 s.
     Time elapsed for loop4: 0.086634 s.
     Time elapsed for loop5: 0.091103 s.
+
+# Swift Package Build Compile options
+
+## Swift Package Build commands:
+    swift build -c debug
+    swift build -c release
+
+
+# Swift Package Build Test Results for 100.000.000 interactions
+
+## ...debug/SwiftCompilerPerformanceTest 100000000
+    Time elapsed for loop1: 4.088951 s.
+    Time elapsed for loop2: 3.975143 s.
+    Time elapsed for loop3: 3.956615 s.
+    Time elapsed for loop4: 1.919784 s.
+    Time elapsed for loop5: 1.751059 s.
+
+## ...release/SwiftCompilerPerformanceTest 100000000
+    Time elapsed for loop1: 0.070402 s.
+    Time elapsed for loop2: 0.074880 s.
+    Time elapsed for loop3: 0.096218 s.
+    Time elapsed for loop4: 0.087858 s.
+    Time elapsed for loop5: 0.090658 s.
 
 
 # Hopper Disassembler intermediate language
