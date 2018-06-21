@@ -7,15 +7,16 @@
 //
 
 import Foundation
+import CTestLoop
 
-func testLoop1(_ a: inout [Int], _ tot: Int) -> Int {
+func testLoop1(_ a: inout [Int64], _ tot: Int) -> Int64 {
     for i in 0..<tot {
         a[i] = 1
     }
     return a[tot/2]
 }
 
-func testLoop2(_ a: inout [Int], _ tot: Int) -> Int {
+func testLoop2(_ a: inout [Int64], _ tot: Int) -> Int64 {
     for i in 0..<tot/10 {
         let start = i*10
         a[start] = 2
@@ -32,7 +33,7 @@ func testLoop2(_ a: inout [Int], _ tot: Int) -> Int {
     return a[tot/2]
 }
 
-func testLoop3(_ a: inout [Int], _ tot: Int) -> Int {
+func testLoop3(_ a: inout [Int64], _ tot: Int) -> Int64 {
     let t = tot/10
     for i in 0..<t {
         let start = i*10
@@ -50,13 +51,13 @@ func testLoop3(_ a: inout [Int], _ tot: Int) -> Int {
     return a[tot/2]
 }
 
-func testLoop4(_ a: inout [Int], _ tot: Int) -> Int {
-    let size = MemoryLayout<Int>.size
+func testLoop4(_ a: inout [Int64], _ tot: Int) -> Int64 {
+    let size = MemoryLayout<Int64>.size
 
     if var p:UnsafeMutableRawPointer = UnsafeMutableRawPointer(mutating: a) {
         //let data = Data(bytes: p, count: tot * size)
         for _ in 0..<tot {
-            p.storeBytes(of: 4, as: Int.self)
+            p.storeBytes(of: 4, as: Int64.self)
             p += size
         }
     }
@@ -64,32 +65,32 @@ func testLoop4(_ a: inout [Int], _ tot: Int) -> Int {
     return a[tot/2]
 }
 
-func testLoop5(_ a: inout [Int], _ tot: Int) -> Int {
-    let size = MemoryLayout<Int>.size
+func testLoop5(_ a: inout [Int64], _ tot: Int) -> Int64 {
+    let size = MemoryLayout<Int64>.size
 
     if var p:UnsafeMutableRawPointer = UnsafeMutableRawPointer(mutating: a) {
         //let data = Data(bytes: p, count: tot * size)
         let t = tot/10
         for _ in 0..<t {
-            p.storeBytes(of: 5, as: Int.self)
+            p.storeBytes(of: 5, as: Int64.self)
             p += size
-            p.storeBytes(of: 5, as: Int.self)
+            p.storeBytes(of: 5, as: Int64.self)
             p += size
-            p.storeBytes(of: 5, as: Int.self)
+            p.storeBytes(of: 5, as: Int64.self)
             p += size
-            p.storeBytes(of: 5, as: Int.self)
+            p.storeBytes(of: 5, as: Int64.self)
             p += size
-            p.storeBytes(of: 5, as: Int.self)
+            p.storeBytes(of: 5, as: Int64.self)
             p += size
-            p.storeBytes(of: 5, as: Int.self)
+            p.storeBytes(of: 5, as: Int64.self)
             p += size
-            p.storeBytes(of: 5, as: Int.self)
+            p.storeBytes(of: 5, as: Int64.self)
             p += size
-            p.storeBytes(of: 5, as: Int.self)
+            p.storeBytes(of: 5, as: Int64.self)
             p += size
-            p.storeBytes(of: 5, as: Int.self)
+            p.storeBytes(of: 5, as: Int64.self)
             p += size
-            p.storeBytes(of: 5, as: Int.self)
+            p.storeBytes(of: 5, as: Int64.self)
             p += size
         }
     }
@@ -97,6 +98,13 @@ func testLoop5(_ a: inout [Int], _ tot: Int) -> Int {
     return a[tot/2]
 }
 
+func testLoop6(_ a: inout [Int64], _ tot: Int) -> Int64 {
+    a.withUnsafeMutableBufferPointer { (cArray: inout UnsafeMutableBufferPointer<Int64>) -> () in
+        test6(cArray.baseAddress, Int64(tot))
+    }
+
+    return a[tot/2]
+}
 
 
 var tot = 1000
@@ -106,8 +114,8 @@ if !CommandLine.arguments.isEmpty, let arg = Int(CommandLine.arguments[1]) {
 
 print(tot)
 
-var a = [Int](repeating: 0, count: tot)
-var n = 0
+var a = [Int64](repeating: 0, count: tot)
+var n:Int64 = 0
 var startTime = 0.0
 var timeElapsed = 0.0
 
@@ -133,5 +141,10 @@ print("Time elapsed for loop\(n): \(String(format: "%f", timeElapsed)) s.")
 
 startTime = CFAbsoluteTimeGetCurrent()
 n = testLoop5(&a, tot)
+timeElapsed = CFAbsoluteTimeGetCurrent() - startTime
+print("Time elapsed for loop\(n): \(String(format: "%f", timeElapsed)) s.")
+
+startTime = CFAbsoluteTimeGetCurrent()
+n = testLoop6(&a, tot)
 timeElapsed = CFAbsoluteTimeGetCurrent() - startTime
 print("Time elapsed for loop\(n): \(String(format: "%f", timeElapsed)) s.")
