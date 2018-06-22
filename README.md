@@ -72,6 +72,16 @@ A super simple FOR loop implemented in three different ways in order to force an
     Time elapsed for loop4: 0.087858 s.
     Time elapsed for loop5: 0.090658 s.
 
+# Swift Package Build Test Results with C based Loop Test (loop6 & loop7) for 1.000.000.000 interactions
+
+## ...release/SwiftCompilerPerformanceTest 1000000000
+    Time elapsed for loop1: 0.648433 s.
+    Time elapsed for loop2: 0.700440 s.
+    Time elapsed for loop3: 0.723819 s.
+    Time elapsed for loop4: 0.683770 s.
+    Time elapsed for loop5: 0.699291 s.
+    Time elapsed for loop6: 0.701897 s.
+    Time elapsed for loop7: 0.705503 s.
 
 # Hopper Disassembler intermediate language
 
