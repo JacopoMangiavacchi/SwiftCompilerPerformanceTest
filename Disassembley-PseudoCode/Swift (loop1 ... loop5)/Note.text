@@ -1,0 +1,11 @@
+In both loop1 to loop5 compiler optimaze memory assignement using intrinsic functions and in particular SSE (Streaming SIMD Extensions) x86 Load Intrinsics APIs such as intrinsic_movups() and intrinsic_movaps()
+
+
+intrinsic_movups() VS memset_pattern16() used instead by CLang compiler in XCode for C code
+
+
+Interesting space reduction optimization on Loop2 and Loop3 sharing the same compiled code
+
+
+https://software.intel.com/en-us/node/524260
+https://en.wikipedia.org/wiki/Intrinsic_function
