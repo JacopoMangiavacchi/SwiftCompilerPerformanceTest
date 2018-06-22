@@ -55,6 +55,12 @@ int main(int argc, const char * argv[]) {
     n = a[tot/2];
     printf( "Time elapsed for loop%lld: %f s.\n", n, (timeElapsed-startTime)/(double)CLOCKS_PER_SEC );
 
+    startTime = clock();
+    test6(a, tot);
+    timeElapsed = clock();
+    n = a[tot/2];
+    printf( "Time elapsed for loop%lld: %f s.\n", n, (timeElapsed-startTime)/(double)CLOCKS_PER_SEC );
+
     free(a);
     return 0;
 }
