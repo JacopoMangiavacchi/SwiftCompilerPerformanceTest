@@ -1,0 +1,48 @@
+In both loop6 (for 1.000.000.000 with 1 assignement instruction) and optimized loop7(100.000.000 with 10 assignement instructions) just call the memset_pattern16() system call
+
+https://www.unix.com/man-page/All/3/memset_pattern16/
+
+
+
+int EntryPoint(int arg0, int arg1) {
+    rsi = arg1;
+    r15 = 0x3e8;
+    if (arg0 >= 0x2) {
+            r15 = atoi(*(rsi + 0x8));
+    }
+    r12 = sign_extend_64(r15);
+    rbx = r12 * 0x8;
+    r14 = malloc(rbx);
+    r13 = clock();
+    if (r12 > 0x0) {
+            memset_pattern16(r14, 0x100000f60, rbx);
+    }
+    var_30 = rbx;
+    xmm0 = intrinsic_punpckldq(zero_extend_64(clock() - r13), *(int128_t *)0x100000f40);
+    xmm0 = intrinsic_subpd(xmm0, *(int128_t *)0x100000f50);
+    xmm0 = intrinsic_haddpd(xmm0, xmm0);
+    rbx = sign_extend_64(SAR((r15 >> 0x1f) + r15, 0x1));
+    intrinsic_divsd(xmm0, *double_value_1E06);
+    printf("Time elapsed for loop%lld: %f s.\n", rsi, rdx);
+    r13 = clock();
+    if (r15 >= 0xa) {
+            memset_pattern16(r14, 0x100000f70, (HIQWORD(r12 * 0xcccccccccccccccd) >> 0x3 << 0x4) + (HIQWORD(r12 * 0xcccccccccccccccd) >> 0x3 << 0x4) * 0x4);
+    }
+    xmm0 = intrinsic_punpckldq(zero_extend_64(clock() - r13), *(int128_t *)0x100000f40);
+    xmm0 = intrinsic_subpd(xmm0, *(int128_t *)0x100000f50);
+    xmm0 = intrinsic_haddpd(xmm0, xmm0);
+    r12 = rbx;
+    intrinsic_divsd(xmm0, *double_value_1E06);
+    printf("Time elapsed for loop%lld: %f s.\n", rsi, rdx);
+    rbx = clock();
+    if (r15 > 0x0) {
+            memset_pattern16(r14, 0x100000f60, var_30);
+    }
+    xmm0 = intrinsic_punpckldq(zero_extend_64(clock() - rbx), *(int128_t *)0x100000f40);
+    xmm0 = intrinsic_subpd(xmm0, *(int128_t *)0x100000f50);
+    xmm0 = intrinsic_haddpd(xmm0, xmm0);
+    intrinsic_divsd(xmm0, *double_value_1E06);
+    printf("Time elapsed for loop%lld: %f s.\n", rsi, rdx);
+    free(r14);
+    return 0x0;
+}

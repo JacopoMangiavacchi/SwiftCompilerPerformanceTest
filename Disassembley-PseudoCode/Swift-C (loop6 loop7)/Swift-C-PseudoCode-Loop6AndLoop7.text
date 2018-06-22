@@ -1,0 +1,22 @@
+In both loop6 (for 1.000.000.000 with 1 assignement instruction) and optimized loop7(100.000.000 with 10 assignement instructions) just call the memset_pattern16() system call
+
+https://www.unix.com/man-page/All/3/memset_pattern16/
+
+int _test6() {
+    rax = rsi;
+    if (rax > 0x0) {
+            rax = memset_pattern16(rdi, 0x100007820, rax << 0x3);
+    }
+    return rax;
+}
+
+
+void _test7() {
+    if (rsi >= 0xa) {
+            memset_pattern16(rdi, 0x100007830, (HIQWORD(rsi * 0xcccccccccccccccd) >> 0x3 << 0x4) + (HIQWORD(rsi * 0xcccccccccccccccd) >> 0x3 << 0x4) * 0x4);
+    }
+    return;
+}
+
+
+

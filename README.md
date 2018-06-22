@@ -83,7 +83,7 @@ A super simple FOR loop implemented in three different ways in order to force an
     Time elapsed for loop6: 0.701897 s.
     Time elapsed for loop7: 0.705503 s.
 
-# XCode Build Test Results with C ONLY based Loop Test (loop6 & loop7) for 1.000.000.000 interactions
+# XCode Build Test Results with C ONLY (No Swift) based Loop Test (loop6 & loop7) for 1.000.000.000 interactions
 
 ## ...release/CTestLoop 1000000000
     Time elapsed for loop6: 0.686525 s.
