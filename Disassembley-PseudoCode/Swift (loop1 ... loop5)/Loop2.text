@@ -1,0 +1,243 @@
+void _$S28SwiftCompilerPerformanceTest9testLoop2ys5Int64VSayADGz_SitFTm(int arg0, int arg1, int arg2) {
+    rbx = arg2;
+    r14 = arg1;
+    r15 = arg0;
+    r12 = HIQWORD(r14 * 0x6666666666666667);
+    if (r14 < 0xfffffffffffffff7) goto loc_100003511;
+
+loc_1000030f7:
+    if (r14 <= 0x9) goto loc_1000032a2;
+
+loc_100003105:
+    if (swift_isUniquelyReferencedOrPinned_nonNull_native(*r15) == 0x0) {
+            r13 = *r15;
+            swift_bridgeObjectRetain(r13);
+            var_30 = _$Ss20_ArrayBufferProtocolPss5RangeVySiG7IndicesRtzrlE7copyingxx_tcfCs01_aB0Vys5Int64VG_Tg5Tf4gd_n(r13);
+            swift_bridgeObjectRelease(r13);
+            rdi = *r15;
+            *r15 = var_30;
+            swift_bridgeObjectRelease(rdi);
+    }
+    if (swift_isUniquelyReferencedOrPinned_nonNull_native(*r15) == 0x0) {
+            r13 = *r15;
+            swift_bridgeObjectRetain(r13);
+            var_30 = _$Ss20_ArrayBufferProtocolPss5RangeVySiG7IndicesRtzrlE7copyingxx_tcfCs01_aB0Vys5Int64VG_Tg5Tf4gd_n(r13);
+            swift_bridgeObjectRelease(r13);
+            rdi = *r15;
+            *r15 = var_30;
+            swift_bridgeObjectRelease(rdi);
+    }
+    if (swift_isUniquelyReferencedOrPinned_nonNull_native(*r15) == 0x0) {
+            r13 = *r15;
+            swift_bridgeObjectRetain(r13);
+            var_30 = _$Ss20_ArrayBufferProtocolPss5RangeVySiG7IndicesRtzrlE7copyingxx_tcfCs01_aB0Vys5Int64VG_Tg5Tf4gd_n(r13);
+            swift_bridgeObjectRelease(r13);
+            rdi = *r15;
+            *r15 = var_30;
+            swift_bridgeObjectRelease(rdi);
+    }
+    if (swift_isUniquelyReferencedOrPinned_nonNull_native(*r15) == 0x0) {
+            r13 = *r15;
+            swift_bridgeObjectRetain(r13);
+            var_30 = _$Ss20_ArrayBufferProtocolPss5RangeVySiG7IndicesRtzrlE7copyingxx_tcfCs01_aB0Vys5Int64VG_Tg5Tf4gd_n(r13);
+            swift_bridgeObjectRelease(r13);
+            rdi = *r15;
+            *r15 = var_30;
+            swift_bridgeObjectRelease(rdi);
+    }
+    if (swift_isUniquelyReferencedOrPinned_nonNull_native(*r15) == 0x0) {
+            r13 = *r15;
+            swift_bridgeObjectRetain(r13);
+            var_30 = _$Ss20_ArrayBufferProtocolPss5RangeVySiG7IndicesRtzrlE7copyingxx_tcfCs01_aB0Vys5Int64VG_Tg5Tf4gd_n(r13);
+            swift_bridgeObjectRelease(r13);
+            rdi = *r15;
+            *r15 = var_30;
+            swift_bridgeObjectRelease(rdi);
+    }
+    if (swift_isUniquelyReferencedOrPinned_nonNull_native(*r15) == 0x0) {
+            r13 = *r15;
+            swift_bridgeObjectRetain(r13);
+            var_30 = _$Ss20_ArrayBufferProtocolPss5RangeVySiG7IndicesRtzrlE7copyingxx_tcfCs01_aB0Vys5Int64VG_Tg5Tf4gd_n(r13);
+            swift_bridgeObjectRelease(r13);
+            rdi = *r15;
+            *r15 = var_30;
+            swift_bridgeObjectRelease(rdi);
+    }
+    if (swift_isUniquelyReferencedOrPinned_nonNull_native(*r15) == 0x0) {
+            r13 = *r15;
+            swift_bridgeObjectRetain(r13);
+            var_30 = _$Ss20_ArrayBufferProtocolPss5RangeVySiG7IndicesRtzrlE7copyingxx_tcfCs01_aB0Vys5Int64VG_Tg5Tf4gd_n(r13);
+            swift_bridgeObjectRelease(r13);
+            rdi = *r15;
+            *r15 = var_30;
+            swift_bridgeObjectRelease(rdi);
+    }
+    if (swift_isUniquelyReferencedOrPinned_nonNull_native(*r15) == 0x0) {
+            r13 = *r15;
+            swift_bridgeObjectRetain(r13);
+            var_30 = _$Ss20_ArrayBufferProtocolPss5RangeVySiG7IndicesRtzrlE7copyingxx_tcfCs01_aB0Vys5Int64VG_Tg5Tf4gd_n(r13);
+            swift_bridgeObjectRelease(r13);
+            rdi = *r15;
+            *r15 = var_30;
+            swift_bridgeObjectRelease(rdi);
+    }
+    if (swift_isUniquelyReferencedOrPinned_nonNull_native(*r15) == 0x0) {
+            r13 = *r15;
+            swift_bridgeObjectRetain(r13);
+            var_30 = _$Ss20_ArrayBufferProtocolPss5RangeVySiG7IndicesRtzrlE7copyingxx_tcfCs01_aB0Vys5Int64VG_Tg5Tf4gd_n(r13);
+            swift_bridgeObjectRelease(r13);
+            rdi = *r15;
+            *r15 = var_30;
+            swift_bridgeObjectRelease(rdi);
+    }
+    r13 = r12 >> 0x3f;
+    r12 = SAR(r12, 0x2);
+    if (swift_isUniquelyReferencedOrPinned_nonNull_native(*r15) == 0x0) {
+            swift_bridgeObjectRetain(*r15);
+            var_38 = _$Ss20_ArrayBufferProtocolPss5RangeVySiG7IndicesRtzrlE7copyingxx_tcfCs01_aB0Vys5Int64VG_Tg5Tf4gd_n(rdi);
+            swift_bridgeObjectRelease(rdi);
+            rdi = *r15;
+            *r15 = var_38;
+            swift_bridgeObjectRelease(rdi);
+    }
+    r12 = r12 + r13;
+    rax = *r15;
+    rcx = *_$Ss27_ContiguousArrayStorageBaseC16countAndCapacitys01_B4BodyVvpWvd;
+    rcx = *rcx;
+    rdx = 0x1;
+    rsi = 0x0;
+    goto loc_1000031d0;
+
+loc_1000031d0:
+    if (rsi >= *(rax + rcx)) goto loc_1000034e5;
+
+loc_1000031da:
+    *(rax + rsi * 0x8 + 0x20) = rbx;
+    rdi = rsi + 0x1;
+    if (rdi >= *(rax + rcx)) goto loc_1000034e9;
+
+loc_1000031ed:
+    *(rax + rsi * 0x8 + 0x28) = rbx;
+    rdi = rdi + 0x1;
+    if (rdi >= *(rax + rcx)) goto loc_1000034ed;
+
+loc_1000031ff:
+    *(rax + rsi * 0x8 + 0x30) = rbx;
+    rdi = rdi + 0x1;
+    if (rdi >= *(rax + rcx)) goto loc_1000034f1;
+
+loc_100003211:
+    *(rax + rsi * 0x8 + 0x38) = rbx;
+    rdi = rdi + 0x1;
+    if (rdi >= *(rax + rcx)) goto loc_1000034f5;
+
+loc_100003223:
+    *(rax + rsi * 0x8 + 0x40) = rbx;
+    rdi = rdi + 0x1;
+    if (rdi >= *(rax + rcx)) goto loc_1000034f9;
+
+loc_100003235:
+    *(rax + rsi * 0x8 + 0x48) = rbx;
+    rdi = rdi + 0x1;
+    if (rdi >= *(rax + rcx)) goto loc_1000034fd;
+
+loc_100003247:
+    *(rax + rsi * 0x8 + 0x50) = rbx;
+    rdi = rdi + 0x1;
+    if (rdi >= *(rax + rcx)) goto loc_100003501;
+
+loc_100003259:
+    *(rax + rsi * 0x8 + 0x58) = rbx;
+    rdi = rdi + 0x1;
+    if (rdi >= *(rax + rcx)) goto loc_100003505;
+
+loc_10000326b:
+    *(rax + rsi * 0x8 + 0x60) = rbx;
+    rdi = rdi + 0x1;
+    if (rdi >= *(rax + rcx)) goto loc_100003509;
+
+loc_10000327d:
+    *(rax + rsi * 0x8 + 0x68) = rbx;
+    if (r12 == rdx) goto loc_1000032a2;
+
+loc_100003287:
+    COND = !OVERFLOW(rsi);
+    rdx = rdx + 0x1;
+    rsi = rdi + 0x1;
+    if (COND) goto loc_1000031d0;
+
+loc_10000329e:
+    asm { ud2 };
+    loc_1000032a0();
+    return;
+
+loc_1000032a2:
+    if (r14 >= 0xffffffffffffffff) {
+            rax = SAR((r14 >> 0x3f) + r14, 0x1);
+            rcx = *r15;
+            if (rax >= *(rcx + **_$Ss27_ContiguousArrayStorageBaseC16countAndCapacitys01_B4BodyVvpWvd)) {
+                    asm { ud2 };
+                    loc_10000350f();
+            }
+    }
+    else {
+            asm { ud2 };
+            loc_10000350f();
+    }
+    return;
+
+loc_100003509:
+    asm { ud2 };
+    loc_10000350b();
+    return;
+
+loc_100003505:
+    asm { ud2 };
+    loc_100003507();
+    return;
+
+loc_100003501:
+    asm { ud2 };
+    loc_100003503();
+    return;
+
+loc_1000034fd:
+    asm { ud2 };
+    loc_1000034ff();
+    return;
+
+loc_1000034f9:
+    asm { ud2 };
+    loc_1000034fb();
+    return;
+
+loc_1000034f5:
+    asm { ud2 };
+    loc_1000034f7();
+    return;
+
+loc_1000034f1:
+    asm { ud2 };
+    loc_1000034f3();
+    return;
+
+loc_1000034ed:
+    asm { ud2 };
+    loc_1000034ef();
+    return;
+
+loc_1000034e9:
+    asm { ud2 };
+    loc_1000034eb();
+    return;
+
+loc_1000034e5:
+    asm { ud2 };
+    loc_1000034e7();
+    return;
+
+loc_100003511:
+    asm { ud2 };
+    sub_100003513();
+    return;
+}

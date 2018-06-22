@@ -1,0 +1,123 @@
+void _$S28SwiftCompilerPerformanceTest9testLoop1ys5Int64VSayADGz_SitF(int arg0, int arg1) {
+    rbx = arg1;
+    r14 = arg0;
+    if (rbx < 0x0) goto loc_100003093;
+
+loc_100002eea:
+    if (CPU_FLAGS & E) goto loc_100003030;
+
+loc_100002ef0:
+    r15 = *r14;
+    if (rbx - 0x1 >= *(r15 + **_$Ss27_ContiguousArrayStorageBaseC16countAndCapacitys01_B4BodyVvpWvd)) goto loc_100003097;
+
+loc_100002f0b:
+    if (swift_isUniquelyReferencedOrPinned_nonNull_native(r15) == 0x0) {
+            swift_bridgeObjectRetain(r15);
+            r12 = _$Ss20_ArrayBufferProtocolPss5RangeVySiG7IndicesRtzrlE7copyingxx_tcfCs01_aB0Vys5Int64VG_Tg5Tf4gd_n(r15);
+            swift_bridgeObjectRelease(r15);
+            rdi = *r14;
+            *r14 = r12;
+            swift_bridgeObjectRelease(rdi);
+    }
+    rax = *r14;
+    if (rbx <= 0x3) {
+            rcx = 0x0;
+            rax = rax + rcx * 0x8 + 0x20;
+            rdx = rbx - rcx;
+            do {
+                    *rax = 0x1;
+                    rax = rax + 0x8;
+                    rdx = rdx - 0x1;
+            } while (rdx != 0x0);
+    }
+    else {
+            rcx = rbx & 0xfffffffffffffffc;
+            rsi = rcx - 0x4 >> 0x2;
+            rdx = rsi + 0x1 & 0x7;
+            if (rcx < 0x20) {
+                    rsi = 0x0;
+                    if (rdx != 0x0) {
+                            rsi = rax + rsi * 0x8 + 0x30;
+                            rdx = -rdx;
+                            xmm0 = intrinsic_movaps(xmm0, *(int128_t *)0x100007880);
+                            do {
+                                    *(int128_t *)(rsi - 0x10) = intrinsic_movups(*(int128_t *)(rsi - 0x10), xmm0);
+                                    *(int128_t *)rsi = intrinsic_movups(*(int128_t *)rsi, xmm0);
+                                    rsi = rsi + 0x20;
+                                    rdx = rdx + 0x1;
+                            } while (rdx != 0x0);
+                    }
+            }
+            else {
+                    rdi = rdx - 0x1 - rsi;
+                    rsi = 0x0;
+                    xmm0 = intrinsic_movaps(xmm0, *(int128_t *)0x100007880);
+                    do {
+                            *(int128_t *)(rax + rsi * 0x8 + 0x20) = intrinsic_movups(*(int128_t *)(rax + rsi * 0x8 + 0x20), xmm0);
+                            *(int128_t *)(rax + rsi * 0x8 + 0x30) = intrinsic_movups(*(int128_t *)(rax + rsi * 0x8 + 0x30), xmm0);
+                            *(int128_t *)(rax + rsi * 0x8 + 0x40) = intrinsic_movups(*(int128_t *)(rax + rsi * 0x8 + 0x40), xmm0);
+                            *(int128_t *)(rax + rsi * 0x8 + 0x50) = intrinsic_movups(*(int128_t *)(rax + rsi * 0x8 + 0x50), xmm0);
+                            *(int128_t *)(rax + rsi * 0x8 + 0x60) = intrinsic_movups(*(int128_t *)(rax + rsi * 0x8 + 0x60), xmm0);
+                            *(int128_t *)(rax + rsi * 0x8 + 0x70) = intrinsic_movups(*(int128_t *)(rax + rsi * 0x8 + 0x70), xmm0);
+                            *(int128_t *)(rax + rsi * 0x8 + 0x80) = intrinsic_movups(*(int128_t *)(rax + rsi * 0x8 + 0x80), xmm0);
+                            *(int128_t *)(rax + rsi * 0x8 + 0x90) = intrinsic_movups(*(int128_t *)(rax + rsi * 0x8 + 0x90), xmm0);
+                            *(int128_t *)(rax + rsi * 0x8 + 0xa0) = intrinsic_movups(*(int128_t *)(rax + rsi * 0x8 + 0xa0), xmm0);
+                            *(int128_t *)(rax + rsi * 0x8 + 0xb0) = intrinsic_movups(*(int128_t *)(rax + rsi * 0x8 + 0xb0), xmm0);
+                            *(int128_t *)(rax + rsi * 0x8 + 0xc0) = intrinsic_movups(*(int128_t *)(rax + rsi * 0x8 + 0xc0), xmm0);
+                            *(int128_t *)(rax + rsi * 0x8 + 0xd0) = intrinsic_movups(*(int128_t *)(rax + rsi * 0x8 + 0xd0), xmm0);
+                            *(int128_t *)(rax + rsi * 0x8 + 0xe0) = intrinsic_movups(*(int128_t *)(rax + rsi * 0x8 + 0xe0), xmm0);
+                            *(int128_t *)(rax + rsi * 0x8 + 0xf0) = intrinsic_movups(*(int128_t *)(rax + rsi * 0x8 + 0xf0), xmm0);
+                            *(int128_t *)(rax + rsi * 0x8 + 0x100) = intrinsic_movups(*(int128_t *)(rax + rsi * 0x8 + 0x100), xmm0);
+                            *(int128_t *)(rax + rsi * 0x8 + 0x110) = intrinsic_movups(*(int128_t *)(rax + rsi * 0x8 + 0x110), xmm0);
+                            rsi = rsi + 0x20;
+                            rdi = rdi + 0x8;
+                    } while (rdi != 0x0);
+                    if (rdx != 0x0) {
+                            rsi = rax + rsi * 0x8 + 0x30;
+                            rdx = -rdx;
+                            xmm0 = intrinsic_movaps(xmm0, *(int128_t *)0x100007880);
+                            do {
+                                    *(int128_t *)(rsi - 0x10) = intrinsic_movups(*(int128_t *)(rsi - 0x10), xmm0);
+                                    *(int128_t *)rsi = intrinsic_movups(*(int128_t *)rsi, xmm0);
+                                    rsi = rsi + 0x20;
+                                    rdx = rdx + 0x1;
+                            } while (rdx != 0x0);
+                    }
+            }
+            if (rcx != rbx) {
+                    rax = rax + rcx * 0x8 + 0x20;
+                    rdx = rbx - rcx;
+                    do {
+                            *rax = 0x1;
+                            rax = rax + 0x8;
+                            rdx = rdx - 0x1;
+                    } while (rdx != 0x0);
+            }
+    }
+    goto loc_100003030;
+
+loc_100003030:
+    if (rbx >= 0xffffffffffffffff) {
+            rax = SAR((rbx >> 0x3f) + rbx, 0x1);
+            rcx = *r14;
+            if (rax >= *(rcx + **_$Ss27_ContiguousArrayStorageBaseC16countAndCapacitys01_B4BodyVvpWvd)) {
+                    asm { ud2 };
+                    loc_100003091();
+            }
+    }
+    else {
+            asm { ud2 };
+            loc_100003091();
+    }
+    return;
+
+loc_100003097:
+    asm { ud2 };
+    sub_100003099();
+    return;
+
+loc_100003093:
+    asm { ud2 };
+    loc_100003095();
+    return;
+}

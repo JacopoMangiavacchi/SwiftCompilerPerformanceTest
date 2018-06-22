@@ -1,0 +1,58 @@
+void _$S28SwiftCompilerPerformanceTest9testLoop4ys5Int64VSayADGz_SitF(int arg0, int arg1) {
+    rsi = arg1;
+    rdi = arg0;
+    rcx = *rdi;
+    rax = rcx + 0x20;
+    if (rsi >= 0x0) {
+            if (!CPU_FLAGS & E) {
+                    if (rsi <= 0x3) {
+                            r9 = 0x0;
+                            rcx = rsi - r9;
+                            do {
+                                    *rax = 0x4;
+                                    rax = rax + 0x8;
+                                    rcx = rcx - 0x1;
+                            } while (rcx != 0x0);
+                    }
+                    else {
+                            r8 = rsi & 0x3;
+                            r9 = rsi - r8;
+                            rax = rax + r9 * 0x8;
+                            rcx = rcx + 0x30;
+                            xmm0 = intrinsic_movaps(xmm0, *(int128_t *)0x100007860);
+                            rdx = r9;
+                            do {
+                                    *(int128_t *)(rcx - 0x10) = intrinsic_movups(*(int128_t *)(rcx - 0x10), xmm0);
+                                    *(int128_t *)rcx = intrinsic_movups(*(int128_t *)rcx, xmm0);
+                                    rcx = rcx + 0x20;
+                                    rdx = rdx - 0x4;
+                            } while (rdx != 0x0);
+                            if (r8 != 0x0) {
+                                    rcx = rsi - r9;
+                                    do {
+                                            *rax = 0x4;
+                                            rax = rax + 0x8;
+                                            rcx = rcx - 0x1;
+                                    } while (rcx != 0x0);
+                            }
+                    }
+                    rcx = *rdi;
+            }
+            if (rsi >= 0xffffffffffffffff) {
+                    rax = SAR((rsi >> 0x3f) + rsi, 0x1);
+                    if (rax >= *(rcx + **_$Ss27_ContiguousArrayStorageBaseC16countAndCapacitys01_B4BodyVvpWvd)) {
+                            asm { ud2 };
+                            loc_1000035bf();
+                    }
+            }
+            else {
+                    asm { ud2 };
+                    loc_1000035bf();
+            }
+    }
+    else {
+            asm { ud2 };
+            sub_1000035c3();
+    }
+    return;
+}
